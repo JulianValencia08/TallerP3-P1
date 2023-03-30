@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from movie import views as movieViews
+from games import views as gameViews
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -26,6 +27,7 @@ urlpatterns = [
     path('signup', movieViews.signup, name='signup'),
     path('news/', include('news.urls')),
     path('movie/', include('movie.urls')),
-    path('accounts/', include('accounts.urls'))
+    path('accounts/', include('accounts.urls')),
+    path('games/', gameViews.gamesHome, name="game_home")
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

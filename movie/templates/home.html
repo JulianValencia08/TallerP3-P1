@@ -1,5 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
+    <div id="carouselExampleAutoplaying" class="carousel slide mb-5" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://wallpapercave.com/wp/wp1876386.jpg" width="100px" height="700px" class="d-block w-100" alt="movie 1">
+            </div>
+            <div class="carousel-item">
+                <img src="https://wallpapercave.com/wp/wp3212730.jpg" width="100px" height="700px" class="d-block w-100" alt="movie 2">
+            </div>
+            <div class="carousel-item">
+                <img src="https://wallpapercave.com/wp/wp2751453.jpg" width="100px" height="700px" class="d-block w-100" alt="movie 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
     <form action="">
         <div class="mb-3">
             <label class="form-label">Search for Movie:</label>
@@ -16,7 +37,7 @@
                         <div class="card-body">
                             <a href="{% url 'detail' movie.id %}">
                                 <h5 class="card-title fw-bold">{{ movie.title }}</h5>
-                            </a>>
+                            </a>
                             <p class="card-text">{{ movie.description }}</p>
                             {% if movie.url %}
                                 <a href="{{ movie.url }}" class="btn btn-primary">Movie Link</a>
@@ -27,3 +48,6 @@
         {% endfor %}
     </div>
 {% endblock content %}
+
+
+
